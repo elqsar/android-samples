@@ -1,10 +1,16 @@
-package cz.boris.demo.annotations;
+package cz.boris.demo.activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,8 +18,15 @@ import android.widget.Toast;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.ColorRes;
+
+import cz.boris.demo.R;
+
+/**
+ * Created by Boris Musatov on 1.3.14.
+ */
 
 @EActivity(R.layout.main_page)
 public class MainActivity extends Activity {
@@ -22,6 +35,10 @@ public class MainActivity extends Activity {
     TextView homeText;
     @ViewById(R.id.main_page_container)
     RelativeLayout mainPageContainer;
+    @ViewById(R.id.take_photo)
+    Button takePhoto;
+    @ViewById(R.id.photo)
+    ImageView photo;
 
     @ColorRes(R.color.mainColor)
     int mainColor;
@@ -30,6 +47,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getActionBar();
+        View root = getWindow().getDecorView().getRootView();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
     }
@@ -38,6 +56,22 @@ public class MainActivity extends Activity {
     public void setupUI() {
         homeText.setText("Hello from Annotated Activity");
         mainPageContainer.setBackgroundColor(mainColor);
+    }
+
+    @Click
+    public void takePhoto() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, 2000);
+        }
+    }
+
+    @OnActivityResult(2000)
+    public void putPhoto(int resultCode, Intent data) {
+        if(resultCode == RESULT_OK) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            photo.setImageBitmap(bitmap);
+        }
     }
 
     @Click(R.id.home_text)

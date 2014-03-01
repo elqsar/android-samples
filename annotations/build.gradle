@@ -36,7 +36,7 @@ dependencies {
 apt {
     arguments {
         androidManifestFile variant.processResources.manifestFile
-        resourcePackageName 'cz.boris.demo.annotations'
+        resourcePackageName 'cz.boris.demo'
 
         // If you're using Android NBS flavors you should use the following line instead of hard-coded packageName
         // resourcePackageName android.defaultConfig.packageName

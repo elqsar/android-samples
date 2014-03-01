@@ -1,4 +1,4 @@
-package cz.boris.demo.views;
+package cz.boris.demo.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,10 +10,10 @@ import android.widget.TextView;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
-import cz.boris.demo.annotations.R;
+import cz.boris.demo.R;
 
 /**
- * Created by musatov on 28.2.14.
+ * Created by Boris Musatov on 28.2.14.
  */
 @EViewGroup(R.layout.image_with_title)
 public class PhotoView extends RelativeLayout {
@@ -27,6 +27,10 @@ public class PhotoView extends RelativeLayout {
 
     public PhotoView(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    public void setTitle(String name) {
+        photoTitle.setText(name);
     }
 
 
