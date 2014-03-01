@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="mainColor">#FFFFFF</color>
+    <color name="nextPageButton">#AA52EA</color>
 </resources>

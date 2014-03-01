@@ -1,7 +1,5 @@
 package cz.boris.demo.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -29,7 +27,9 @@ import cz.boris.demo.R;
 
 @EActivity(R.layout.main_page)
 @OptionsMenu(R.menu.main)
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
+
+    public static final int TAKE_PHOTO_REQUEST = 2000;
 
     @ViewById(R.id.home_text)
     TextView homeText;
@@ -48,9 +48,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
     }
 
     @AfterViews
@@ -63,7 +60,7 @@ public class MainActivity extends Activity {
     public void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, 2000);
+            startActivityForResult(intent, TAKE_PHOTO_REQUEST);
         }
     }
 
@@ -73,7 +70,7 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    @OnActivityResult(2000)
+    @OnActivityResult(TAKE_PHOTO_REQUEST)
     public void putPhoto(int resultCode, Intent data) {
         if(resultCode == RESULT_OK) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");

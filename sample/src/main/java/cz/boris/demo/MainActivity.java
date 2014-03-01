@@ -2,6 +2,7 @@ package cz.boris.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,9 +10,12 @@ import cz.boris.demo.fragment.MainFragment;
 
 public class MainActivity extends Activity {
 
+    public static final String TAG = "Main Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate()");
         setContentView(R.layout.fragment_container);
         getFragmentManager().beginTransaction().add(R.id.fragment_container, MainFragment.newInstance()).commit();
         getActionBar().setHomeButtonEnabled(true);
@@ -19,6 +23,17 @@ public class MainActivity extends Activity {
         getActionBar().setTitle("Main Activity");
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause()");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

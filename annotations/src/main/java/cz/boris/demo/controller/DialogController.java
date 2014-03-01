@@ -5,5 +5,4 @@ package cz.boris.demo.controller;
  */
 public class DialogController {
 
-
 }

@@ -1,7 +1,5 @@
 package cz.boris.demo.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.EActivity;
@@ -14,13 +12,10 @@ import cz.boris.demo.R;
  */
 @EActivity(R.layout.drawing_layout)
 @OptionsMenu(R.menu.main)
-public class DrawingActivity extends Activity {
+public class DrawingActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
     }
 }

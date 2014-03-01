@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Next Page"
         android:id="@+id/next_page"
-        android:background="#AA52EA"
+        android:background="@color/nextPageButton"
+        android:textColor="@color/mainColor"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
