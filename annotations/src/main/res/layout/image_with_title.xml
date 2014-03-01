@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:id="@+id/photo"
+        android:padding="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Some text"
+        android:padding="12dp"
+        android:id="@+id/photo_title"
+        android:layout_toRightOf="@+id/photo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:id="@+id/take_photo"
+        android:text="Take Photo"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/photo"
+        android:layout_below="@+id/photo_title" />
+
+</RelativeLayout>
