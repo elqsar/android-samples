@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="10"
+        android:id="@+id/topic_id"
+        android:text="1"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="35"
+        android:id="@+id/topic_name"
+        android:text="Learn Clojure"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="55"
+        android:id="@+id/topic_description"
+        android:text="Buy some good book and set up environment"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

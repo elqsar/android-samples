@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next Page"
+        android:id="@+id/next_page"
+        android:background="@color/nextPageButton"
+        android:textColor="@color/mainColor"
+        android:layout_alignParentBottom="true"/>
+
+</merge>

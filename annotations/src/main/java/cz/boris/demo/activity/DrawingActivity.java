@@ -1,7 +1,9 @@
 package cz.boris.demo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsMenu;
 
@@ -17,5 +19,11 @@ public class DrawingActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Click(R.id.next_page)
+    public void nextPage() {
+        Intent intent = new Intent(this, FragmentActivity.class);
+        startActivity(intent);
     }
 }

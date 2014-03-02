@@ -9,7 +9,9 @@
         android:id="@+id/home_text"
         android:text="@string/hello_world"
         android:gravity="center"
+        android:paddingTop="16dp"
         android:paddingBottom="16dp"
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -19,13 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next Page"
-        android:id="@+id/next_page"
-        android:background="@color/nextPageButton"
-        android:textColor="@color/mainColor"
-        android:layout_alignParentBottom="true"/>
+    <include layout="@layout/next_page_button" />
 
 </RelativeLayout>
