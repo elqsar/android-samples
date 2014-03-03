@@ -16,17 +16,21 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cz.boris.demo.activity.FragmentActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cz.boris.demo.activity.MainActivity_"
+            android:name="cz.boris.demo.activity.MainMenuActivity_"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="cz.boris.demo.activity.FragmentActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cz.boris.demo.activity.MainActivity_"
+            android:label="@string/app_name" >
         </activity>
     </application>
 </manifest>

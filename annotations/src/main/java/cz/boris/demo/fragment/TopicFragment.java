@@ -57,9 +57,9 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
     }
 
     @AfterInject
-    public void setupBeans() {
-        database = new DB(getActivity());
-        database.open();
+        public void setupBeans() {
+            database = new DB(getActivity());
+            database.open();
     }
 
     @AfterViews
