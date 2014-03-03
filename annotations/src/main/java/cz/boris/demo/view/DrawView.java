@@ -39,7 +39,7 @@ public class DrawView extends View {
         paint.setColor(Color.GREEN);
         canvas.drawPath(path, paint);
         matrix.reset();
-        matrix.setTranslate(300, 200);
+        matrix.setTranslate(100, 100);
         path.transform(matrix);
         paint.setColor(Color.BLUE);
         canvas.drawPath(path, paint);

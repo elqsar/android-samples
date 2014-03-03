@@ -84,6 +84,8 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
         if(getLoaderManager().getLoader(0).isStarted()) {
             getLoaderManager().getLoader(0).forceLoad();
         }
+        topicName.setText("");
+        topicDescription.setText("");
     }
 
     @Override

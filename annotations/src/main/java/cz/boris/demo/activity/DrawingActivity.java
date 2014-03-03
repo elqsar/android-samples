@@ -19,6 +19,7 @@ public class DrawingActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setTitle("Drawing view");
     }
 
     @Click(R.id.next_page)

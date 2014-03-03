@@ -16,6 +16,7 @@ public class FragmentActivity extends BaseActivity {
         setContentView(R.layout.fragment_container);
         TopicFragment fragment = TopicFragment.newInstance(new Bundle());
         getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
+        getActionBar().setTitle("Simple Loader");
 
     }
 }
