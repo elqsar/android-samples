@@ -17,6 +17,7 @@ import cz.boris.demo.R;
 import cz.boris.demo.activity.DrawingActivity_;
 import cz.boris.demo.activity.FragmentActivity;
 import cz.boris.demo.activity.MainActivity_;
+import cz.boris.demo.activity.RestActivity_;
 
 /**
  * Created by Boris Musatov on 3.3.14.
@@ -35,6 +36,7 @@ public class MainMenuFragment extends ListFragment {
         adapter.add(new MenuItem("Basics", MainActivity_.class));
         adapter.add(new MenuItem("Fragments and Loaders", FragmentActivity.class));
         adapter.add(new MenuItem("Drawing view", DrawingActivity_.class));
+        adapter.add(new MenuItem("REST activity", RestActivity_.class));
         setListAdapter(adapter);
     }
 

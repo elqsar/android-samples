@@ -30,7 +30,7 @@ import cz.boris.demo.data.DB;
  * Created by Boris Musatov on 2.3.14.
  */
 @EFragment(R.layout.topic_fragment)
-public class TopicFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class TopicFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     @ViewById(R.id.topic_name_edit)
     EditText topicName;
@@ -52,20 +52,17 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-//        database = new DB(activity);
-//        database.open();
     }
 
     @AfterInject
-        public void setupBeans() {
-            database = new DB(getActivity());
-            database.open();
+    public void setupBeans() {
+        database.open();
     }
 
     @AfterViews
     public void setup() {
-        String[] from = new String[] {"_id", "name", "description"};
-        int[] to = new int[] {R.id.topic_id, R.id.topic_name, R.id.topic_description};
+        String[] from = new String[]{"_id", "name", "description"};
+        int[] to = new int[]{R.id.topic_id, R.id.topic_name, R.id.topic_description};
         adapter = new SimpleCursorAdapter(getActivity(), R.layout.topic_row, null, from, to, 0);
         topicList.setAdapter(adapter);
         topicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -81,7 +78,7 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
     @Click(R.id.save_topic)
     public void saveTopic() {
         database.addTopic(topicName.getText().toString(), topicDescription.getText().toString());
-        if(getLoaderManager().getLoader(0).isStarted()) {
+        if (getLoaderManager().getLoader(0).isStarted()) {
             getLoaderManager().getLoader(0).forceLoad();
         }
         topicName.setText("");
@@ -96,6 +93,7 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         adapter.swapCursor(data);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

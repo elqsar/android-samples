@@ -18,6 +18,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+    }
+
     buildTypes {
         release {
             runProguard false
@@ -30,6 +38,10 @@ dependencies {
     compile 'com.android.support:support-v4:19.0.+'
     apt "org.androidannotations:androidannotations:${androidAnnotationsVersion}"
     compile "org.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
