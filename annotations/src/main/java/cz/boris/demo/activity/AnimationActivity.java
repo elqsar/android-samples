@@ -5,19 +5,19 @@ import android.os.Bundle;
 import org.androidannotations.annotations.EActivity;
 
 import cz.boris.demo.R;
-import cz.boris.demo.fragment.TopicFragment;
+import cz.boris.demo.fragment.AnimationFragment;
 
 /**
- * Created by Boris Musatov on 1.3.14.
+ * Created by Boris Musatov on 13.3.14.
  */
 @EActivity(R.layout.fragment_container)
-public class FragmentActivity extends BaseActivity {
+public class AnimationActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TopicFragment fragment = TopicFragment.newInstance(new Bundle());
+        AnimationFragment fragment = AnimationFragment.newInstance();
         getFragmentManager().beginTransaction().add(R.id.fragment_container, fragment).commit();
-        getActionBar().setTitle("Simple Loader");
+
     }
 }

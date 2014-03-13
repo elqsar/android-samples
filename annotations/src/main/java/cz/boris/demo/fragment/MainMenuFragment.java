@@ -14,6 +14,7 @@ import android.widget.TextView;
 import org.androidannotations.annotations.EFragment;
 
 import cz.boris.demo.R;
+import cz.boris.demo.activity.AnimationActivity_;
 import cz.boris.demo.activity.DrawingActivity_;
 import cz.boris.demo.activity.FragmentActivity;
 import cz.boris.demo.activity.MainActivity_;
@@ -37,6 +38,7 @@ public class MainMenuFragment extends ListFragment {
         adapter.add(new MenuItem("Fragments and Loaders", FragmentActivity.class));
         adapter.add(new MenuItem("Drawing view", DrawingActivity_.class));
         adapter.add(new MenuItem("REST activity", RestActivity_.class));
+        adapter.add(new MenuItem("Annimation", AnimationActivity_.class));
         setListAdapter(adapter);
     }
 

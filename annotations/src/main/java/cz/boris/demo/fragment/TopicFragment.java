@@ -66,10 +66,10 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
         adapter = new SimpleCursorAdapter(getActivity(), R.layout.topic_row, null, from, to, 0);
         topicList.setAdapter(adapter);
         topicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView text = (TextView) view.findViewById(R.id.topic_id);
-                Toast.makeText(getActivity(), text.getText().toString(), Toast.LENGTH_LONG).show();
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        TextView text = (TextView) view.findViewById(R.id.topic_id);
+                        Toast.makeText(getActivity(), text.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
         getLoaderManager().initLoader(0, null, this);
@@ -94,6 +94,12 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         adapter.swapCursor(data);
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        database.close();
     }
 
     @Override
