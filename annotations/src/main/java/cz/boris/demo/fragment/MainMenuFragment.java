@@ -20,7 +20,7 @@ import cz.boris.demo.activity.FragmentActivity_;
 import cz.boris.demo.activity.MainActivity_;
 import cz.boris.demo.activity.RestActivity_;
 import cz.boris.demo.activity.ServiceActivity_;
-import cz.boris.demo.activity.TabbedActivity;
+import cz.boris.demo.activity.TabbedActivity_;
 
 /**
  * Created by Boris Musatov on 3.3.14.
@@ -42,7 +42,7 @@ public class MainMenuFragment extends ListFragment {
         adapter.add(new MenuItem("REST activity", RestActivity_.class));
         adapter.add(new MenuItem("Annimation", AnimationActivity_.class));
         adapter.add(new MenuItem("Intent Service", ServiceActivity_.class));
-        adapter.add(new MenuItem("Tabbed Activity", TabbedActivity.class));
+        adapter.add(new MenuItem("Tabbed Activity", TabbedActivity_.class));
         setListAdapter(adapter);
     }
 

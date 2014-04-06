@@ -24,7 +24,7 @@ public class DrawingActivity extends BaseActivity {
 
     @Click(R.id.next_page)
     public void nextPage() {
-        Intent intent = new Intent(this, FragmentActivity.class);
+        Intent intent = new Intent(this, FragmentActivity_.class);
         startActivity(intent);
     }
 }

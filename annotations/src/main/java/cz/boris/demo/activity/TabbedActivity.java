@@ -4,6 +4,9 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OptionsMenu;
+
 import cz.boris.demo.R;
 import cz.boris.demo.fragment.AnimationFragment;
 import cz.boris.demo.fragment.MainMenuFragment;
@@ -12,12 +15,13 @@ import cz.boris.demo.fragment.TopicFragment;
 /**
  * Created by Boris Musatov on 31.3.2014.
  */
+@EActivity(R.layout.fragment_container)
+@OptionsMenu(R.menu.main)
 public class TabbedActivity extends BaseActivity implements ActionBar.TabListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_container);
         final ActionBar bar = getActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         createTabs(bar);
