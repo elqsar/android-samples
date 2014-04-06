@@ -2,18 +2,26 @@ package cz.boris.demo.service;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.util.Log;
+
+import org.androidannotations.annotations.EIntentService;
+import org.androidannotations.annotations.ServiceAction;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Boris Musatov on 1.3.14.
  */
+@EIntentService
 public class SimpleService extends IntentService {
 
-    /**
-     * Creates an IntentService.  Invoked by your subclass's constructor.
-     *
-     */
+    private static final String TAG = "SampleService";
+
+    @ServiceAction
+    public void Action() {
+        Log.d(TAG, "Service was called");
+    }
+
     public SimpleService() {
         super("Simple Service");
     }

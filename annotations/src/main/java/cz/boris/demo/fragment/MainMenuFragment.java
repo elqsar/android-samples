@@ -16,9 +16,11 @@ import org.androidannotations.annotations.EFragment;
 import cz.boris.demo.R;
 import cz.boris.demo.activity.AnimationActivity_;
 import cz.boris.demo.activity.DrawingActivity_;
-import cz.boris.demo.activity.FragmentActivity;
+import cz.boris.demo.activity.FragmentActivity_;
 import cz.boris.demo.activity.MainActivity_;
 import cz.boris.demo.activity.RestActivity_;
+import cz.boris.demo.activity.ServiceActivity_;
+import cz.boris.demo.activity.TabbedActivity;
 
 /**
  * Created by Boris Musatov on 3.3.14.
@@ -35,10 +37,12 @@ public class MainMenuFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         MainMenuAdapter adapter = new MainMenuAdapter(getActivity(), 0);
         adapter.add(new MenuItem("Basics", MainActivity_.class));
-        adapter.add(new MenuItem("Fragments and Loaders", FragmentActivity.class));
+        adapter.add(new MenuItem("Fragments and Loaders", FragmentActivity_.class));
         adapter.add(new MenuItem("Drawing view", DrawingActivity_.class));
         adapter.add(new MenuItem("REST activity", RestActivity_.class));
         adapter.add(new MenuItem("Annimation", AnimationActivity_.class));
+        adapter.add(new MenuItem("Intent Service", ServiceActivity_.class));
+        adapter.add(new MenuItem("Tabbed Activity", TabbedActivity.class));
         setListAdapter(adapter);
     }
 

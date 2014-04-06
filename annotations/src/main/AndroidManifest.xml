@@ -17,6 +17,14 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name="cz.boris.demo.activity.ServiceActivity_"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cz.boris.demo.activity.TabbedActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="cz.boris.demo.activity.AnimationActivity_"
             android:label="@string/app_name" >
         </activity>
