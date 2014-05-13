@@ -5,5 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="details">The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.</string>
+    <string name="invalid_info_message">Please provide valid info</string>
 
 </resources>

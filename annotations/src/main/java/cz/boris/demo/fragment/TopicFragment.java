@@ -8,6 +8,7 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -32,6 +33,10 @@ import cz.boris.demo.data.DB;
 @EFragment(R.layout.topic_fragment)
 public class TopicFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    public static final String ID = "_id";
+    public static final String NAME = "name";
+    public static final String DESCRIPTION = "description";
+    
     @ViewById(R.id.topic_name_edit)
     EditText topicName;
     @ViewById(R.id.topic_description_edit)
@@ -61,7 +66,7 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
 
     @AfterViews
     public void setup() {
-        String[] from = new String[]{"_id", "name", "description"};
+        String[] from = new String[]{ID, NAME, DESCRIPTION};
         int[] to = new int[]{R.id.topic_id, R.id.topic_name, R.id.topic_description};
         adapter = new SimpleCursorAdapter(getActivity(), R.layout.topic_row, null, from, to, 0);
         topicList.setAdapter(adapter);
@@ -77,12 +82,21 @@ public class TopicFragment extends Fragment implements LoaderManager.LoaderCallb
 
     @Click(R.id.save_topic)
     public void saveTopic() {
-        database.addTopic(topicName.getText().toString(), topicDescription.getText().toString());
-        if (getLoaderManager().getLoader(0).isStarted()) {
-            getLoaderManager().getLoader(0).forceLoad();
+        if(checkInputValidity()) {
+            database.addTopic(topicName.getText().toString(), topicDescription.getText().toString());
+            if (getLoaderManager().getLoader(0).isStarted()) {
+                getLoaderManager().getLoader(0).forceLoad();
+            }
+            topicName.setText("");
+            topicDescription.setText("");
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.invalid_info_message), Toast.LENGTH_SHORT).show();
         }
-        topicName.setText("");
-        topicDescription.setText("");
+    }
+
+    private boolean checkInputValidity() {
+        return !TextUtils.isEmpty(topicName.getText().toString()) &&
+           !TextUtils.isEmpty(topicDescription.getText().toString());
     }
 
     @Override
