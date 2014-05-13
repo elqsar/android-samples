@@ -9,9 +9,9 @@ import cz.boris.demo.data.User;
 /**
  * Created by Boris Musatov on 3.3.14.
  */
-@Rest(rootUrl = "https://api.github.com/", converters = {MappingJackson2HttpMessageConverter.class})
+@Rest(rootUrl = RouteConstants.ROOT_URL, converters = {MappingJackson2HttpMessageConverter.class})
 public interface SimpleRestClient {
-    @Get("users/{name}")
-    public User getUser(String name);
 
+    @Get(RouteConstants.USER_ROUTE)
+    public User getUser(String name);
 }

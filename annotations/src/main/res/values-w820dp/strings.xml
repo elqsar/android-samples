@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="invalid_info_message">Please provide valid info</string>
+    <string name="menu_basics">Basics</string>
+    <string name="fragments_and_loaders">Fragments and Loaders</string>
+    <string name="drawing">Drawing view</string>
+    <string name="rest_menu">REST activity</string>
+    <string name="animation_menu">Annimation</string>
+    <string name="intent_service">Intent Service</string>
+    <string name="tabbed_activity">Tabbed Activity</string>
 </resources>

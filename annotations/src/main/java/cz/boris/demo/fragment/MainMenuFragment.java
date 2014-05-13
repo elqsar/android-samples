@@ -36,13 +36,13 @@ public class MainMenuFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         MainMenuAdapter adapter = new MainMenuAdapter(getActivity(), 0);
-        adapter.add(new MenuItem("Basics", MainActivity.get()));
-        adapter.add(new MenuItem("Fragments and Loaders", FragmentActivity.get()));
-        adapter.add(new MenuItem("Drawing view", DrawingActivity.get()));
-        adapter.add(new MenuItem("REST activity", RestActivity.get()));
-        adapter.add(new MenuItem("Annimation", AnimationActivity.get()));
-        adapter.add(new MenuItem("Intent Service", ServiceActivity.get()));
-        adapter.add(new MenuItem("Tabbed Activity", TabbedActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.menu_basics), MainActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.fragments_and_loaders), FragmentActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.drawing), DrawingActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.rest_menu), RestActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.animation_menu), AnimationActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.intent_service), ServiceActivity.get()));
+        adapter.add(new MenuItem(getString(R.string.tabbed_activity), TabbedActivity.get()));
         setListAdapter(adapter);
     }
 
