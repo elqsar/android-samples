@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.EActivity;
@@ -15,6 +16,10 @@ import cz.boris.demo.service.SimpleService_;
 @OptionsMenu(R.menu.main)
 public class ServiceActivity extends BaseActivity {
 
+    public static Class<? extends Activity> get() {
+        return FragmentActivity_.class;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +28,12 @@ public class ServiceActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SimpleService_.intent(this).start();
+        SimpleService_.intent(getApplication()).Action().start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SimpleService_.intent(getApplication()).stop();
     }
 }

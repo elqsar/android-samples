@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.EActivity;
@@ -12,6 +13,10 @@ import cz.boris.demo.fragment.AnimationFragment;
  */
 @EActivity(R.layout.fragment_container)
 public class AnimationActivity extends BaseActivity {
+
+    public static Class<? extends Activity> get() {
+        return AnimationActivity_.class;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -28,6 +29,10 @@ import cz.boris.demo.R;
 @EActivity(R.layout.main_page)
 @OptionsMenu(R.menu.main)
 public class MainActivity extends BaseActivity {
+
+    public static Class<? extends Activity> get() {
+        return MainActivity_.class;
+    }
 
     public static final int TAKE_PHOTO_REQUEST = 2000;
 

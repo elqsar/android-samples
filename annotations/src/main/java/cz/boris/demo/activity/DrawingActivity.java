@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,6 +17,10 @@ import cz.boris.demo.R;
 @OptionsMenu(R.menu.main)
 public class DrawingActivity extends BaseActivity {
 
+    public static Class<? extends Activity> get() {
+        return DrawingActivity_.class;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +29,7 @@ public class DrawingActivity extends BaseActivity {
 
     @Click(R.id.next_page)
     public void nextPage() {
-        Intent intent = new Intent(this, FragmentActivity_.class);
+        Intent intent = new Intent(this, FragmentActivity.get());
         startActivity(intent);
     }
 }

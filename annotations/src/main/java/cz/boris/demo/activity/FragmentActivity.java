@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.EActivity;
@@ -12,6 +13,10 @@ import cz.boris.demo.fragment.TopicFragment;
  */
 @EActivity(R.layout.fragment_container)
 public class FragmentActivity extends BaseActivity {
+
+    public static Class<? extends Activity> get() {
+        return FragmentActivity_.class;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

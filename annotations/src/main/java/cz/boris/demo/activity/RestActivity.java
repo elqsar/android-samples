@@ -1,5 +1,6 @@
 package cz.boris.demo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -20,6 +21,10 @@ import cz.boris.demo.network.SimpleRestClient;
 @EActivity(R.layout.fragment_container)
 @OptionsMenu(R.menu.main)
 public class RestActivity extends BaseActivity {
+
+    public static Class<? extends Activity> get() {
+        return RestActivity_.class;
+    }
 
     @RestService
     SimpleRestClient client;

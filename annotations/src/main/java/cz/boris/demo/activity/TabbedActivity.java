@@ -1,6 +1,7 @@
 package cz.boris.demo.activity;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
@@ -18,6 +19,10 @@ import cz.boris.demo.fragment.TopicFragment;
 @EActivity(R.layout.fragment_container)
 @OptionsMenu(R.menu.main)
 public class TabbedActivity extends BaseActivity implements ActionBar.TabListener {
+
+    public static Class<? extends Activity> get() {
+        return TabbedActivity_.class;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

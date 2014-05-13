@@ -49,5 +49,7 @@
             android:name="cz.boris.demo.activity.MainActivity_"
             android:label="@string/app_name" >
         </activity>
+        <service android:name=".service.SimpleService_"
+            android:exported="false"/>
     </application>
 </manifest>

@@ -7,8 +7,6 @@ import android.util.Log;
 import org.androidannotations.annotations.EIntentService;
 import org.androidannotations.annotations.ServiceAction;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created by Boris Musatov on 1.3.14.
  */
@@ -19,7 +17,7 @@ public class SimpleService extends IntentService {
 
     @ServiceAction
     public void Action() {
-        Log.d(TAG, "Service was called");
+        Log.d(TAG, "Service was called from");
     }
 
     public SimpleService() {
@@ -28,10 +26,12 @@ public class SimpleService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
+        if(intent.getAction().equals("Action")) {
+            try {
+                Log.d(TAG, "working on...");
+            } catch (Exception e) {
 
+            }
         }
     }
 }
