@@ -17,7 +17,7 @@ import cz.boris.demo.service.SimpleService_;
 public class ServiceActivity extends BaseActivity {
 
     public static Class<? extends Activity> get() {
-        return FragmentActivity_.class;
+        return ServiceActivity_.class;
     }
 
     @Override
